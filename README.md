@@ -24,6 +24,17 @@ python3 -m venv myenv
 Sanal ortamı etkinleştirmek için:
 source myenv/bin/activate
 
+Virtualenv:
+Virtualenv, her proje için izole edilmiş bir Python ortamı oluşturmanıza olanak tanır. Bu sayede, projelerinizin bağımlılıkları birbirinden bağımsız olur ve çakışmalar önlenir.
+Kurulum için terminalde şu komutu çalıştırabilirsiniz:
+sudo apt install python3-venv
+
+Bir sanal ortam oluşturmak için:
+python3 -m venv myenv
+
+Sanal ortamı etkinleştirmek için:
+source myenv/bin/activate
+
 Conda:
 Conda, özellikle veri bilimi ve makine öğrenimi projeleri için popüler bir paket yönetim ve ortam yönetim aracıdır. Conda ile farklı Python sürümleri ve bağımlılıkları kolayca yönetebilirsiniz.
 Conda’yı kurmak için Anaconda veya Miniconda yükleyicisini kullanabilirsiniz.
