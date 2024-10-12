@@ -1,18 +1,34 @@
 # -DEV1
-PYNEV İLE BİRDEN FAZLA python SÜRÜMÜNÜ YÖNETİM
-https://tr.python-3.com/?p=399
+Ubuntu'da Python'un farklı sürümleriyle çalışırken çakışmaları engellemek veya kontrol eden sistem var mı ?
 
-Ubuntu'nun yüklü farklı python sürümlerini nasıl kontrol edebilirim
-Kod örnekleri
-2
-0
-Ubuntu'nun tüm Python sürümlerini kontrol edin
-# Sürüm mengenesi olarak görüntüle:
-$(compgen -c python) içindeki P için; printf "%-16s" $p; $p --version; yapılmış
-python2.7      Python 2.7.6
-python3.4m     Python 3.4.3
+Pyenv:
+Pyenv, birden fazla Python sürümünü yönetmenizi ve aralarında kolayca geçiş yapmanızı sağlayan bir araçtır. Pyenv ile her proje için farklı Python sürümleri kullanabilirsiniz1.
+Kurulum için terminalde şu komutları çalıştırabilirsiniz:
+curl https://pyenv.run | bash
 
-# olarak görüntüle:
-$ compgen -c python
-python2.7
-piton3,4 milyon
+Kurulum tamamlandıktan sonra, .bashrc veya .zshrc dosyanıza aşağıdaki satırları ekleyin:
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+Daha sonra terminali yeniden başlatın ve pyenv install <sürüm> komutunu kullanarak istediğiniz Python sürümünü yükleyin.
+Virtualenv:
+Virtualenv, her proje için izole edilmiş bir Python ortamı oluşturmanıza olanak tanır. Bu sayede, projelerinizin bağımlılıkları birbirinden bağımsız olur ve çakışmalar önlenir.
+Kurulum için terminalde şu komutu çalıştırabilirsiniz:
+sudo apt install python3-venv
+
+Bir sanal ortam oluşturmak için:
+python3 -m venv myenv
+
+Sanal ortamı etkinleştirmek için:
+source myenv/bin/activate
+
+Conda:
+Conda, özellikle veri bilimi ve makine öğrenimi projeleri için popüler bir paket yönetim ve ortam yönetim aracıdır. Conda ile farklı Python sürümleri ve bağımlılıkları kolayca yönetebilirsiniz.
+Conda’yı kurmak için Anaconda veya Miniconda yükleyicisini kullanabilirsiniz.
+Yeni bir ortam oluşturmak için:
+conda create --name myenv python=3.x
+
+Ortamı etkinleştirmek için:
+conda activate myenv
